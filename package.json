@@ -1,7 +1,7 @@
 {
   "name": "bin-calculator",
   "version": "0.1.0",
-  "private": true,
+  "author": "Grzegorz Kupczyk",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
