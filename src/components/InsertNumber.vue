@@ -3,6 +3,9 @@
     <input type="text" v-model="raw_number" />
     <select v-model="format">
       <option value="dec">Decimal</option>
+      <option value="bin">Binary</option>
+      <option value="oct">Octal</option>
+      <option value="hex">Hex</option>
     </select>
     <button @click="submit">Zapisz</button>
   </div>
@@ -18,7 +21,23 @@ export default {
   },
   methods: {
     submit() {
-      alert(this.raw_number);
+      const transformFunction = this[this.format];
+
+      const number = transformFunction(this.raw_number);
+
+      this.$emit("newnumber", number);
+    },
+    dec() {
+      return parseFloat(this.raw_number);
+    },
+    bin() {
+      return parseInt(this.raw_number, 2);
+    },
+    oct() {
+      return parseInt(this.raw_number, 8);
+    },
+    hex() {
+      return parseInt(this.raw_number, 16);
     }
   }
 };

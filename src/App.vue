@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <InsertNumber />
-    <DisplayNumber :number="200" />
+    <InsertNumber @newnumber="updateNumber" />
+    <DisplayNumber :number="number" />
   </div>
 </template>
 
@@ -11,7 +11,17 @@ import InsertNumber from "@/components/InsertNumber.vue";
 
 export default {
   name: "App",
-  components: { DisplayNumber, InsertNumber }
+  data() {
+    return {
+      number: 0
+    };
+  },
+  components: { DisplayNumber, InsertNumber },
+  methods: {
+    updateNumber(number) {
+      this.number = number;
+    }
+  }
 };
 </script>
 

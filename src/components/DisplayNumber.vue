@@ -2,12 +2,14 @@
   <div class="number">
     <div class="pair" v-for="pair in pairs" :key="pair.title">
       <span class="title">{{ pair.title }}</span>
-      <span class="digits">{{ pair.digits }}</span>
+      <span class="digits">{{ pair.digits | limitDigits }}</span>
     </div>
   </div>
 </template>
 
 <script>
+const limitDigitsLength = 15;
+
 export default {
   name: "DisplayNumber",
   props: {
@@ -21,6 +23,11 @@ export default {
         { title: "Octal", digits: this.number.toString(8) },
         { title: "Hex", digits: this.number.toString(16) }
       ];
+    }
+  },
+  filters: {
+    limitDigits(value) {
+      return ("" + value).substring(0, limitDigitsLength);
     }
   }
 };
