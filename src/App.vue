@@ -1,15 +1,17 @@
 <template>
   <div id="app">
+    <InsertNumber />
     <DisplayNumber :number="200" />
   </div>
 </template>
 
 <script>
 import DisplayNumber from "@/components/DisplayNumber.vue";
+import InsertNumber from "@/components/InsertNumber.vue";
 
 export default {
   name: "App",
-  components: { DisplayNumber }
+  components: { DisplayNumber, InsertNumber }
 };
 </script>
 

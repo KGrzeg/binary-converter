@@ -1,8 +1,8 @@
 <template>
   <div class="number">
-    <div class="pair" v-for="pair in pairs" :key="pair">
-      <span class="title">{{pair.title}}</span>
-      <span class="digits">{{pair.digits}}</span>
+    <div class="pair" v-for="pair in pairs" :key="pair.title">
+      <span class="title">{{ pair.title }}</span>
+      <span class="digits">{{ pair.digits }}</span>
     </div>
   </div>
 </template>
@@ -27,10 +27,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/variables.scss";
+
 .number {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: $widget-width;
   padding: 0.2em;
   background-color: rgba(124, 188, 10, 1);
 }
