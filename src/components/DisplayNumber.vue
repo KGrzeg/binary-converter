@@ -8,7 +8,7 @@
 </template>
 
 <script>
-const limitDigitsLength = 15;
+const limitDigitsLength = 16;
 
 export default {
   name: "DisplayNumber",
